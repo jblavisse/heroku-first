@@ -7,6 +7,8 @@ const port =  process.env.PORT || 3000;
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
+app.get('/services', (req, res) => res.send('Mes services'))
+
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
