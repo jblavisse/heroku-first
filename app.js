@@ -13,7 +13,11 @@ const port =  process.env.PORT || 3000;
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
-app.get('/services', (req, res) => res.send('Mes services'))
+const tasksRouter = require('./routes/tasksRouter');
+app.use('/tasks', tasksRouter);
+
+const usersRouter = require('./routes/usersRouter');
+app.use('/users', usersRouter);
 
 sequelize.authenticate()
 // Si c'est bon
