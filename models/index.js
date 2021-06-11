@@ -13,7 +13,7 @@ dotenv.config();
 
 // Créer une instance de sequelize avec les paramètres de la BDD
 const sequelize = new Sequelize(
-    process.env.DB_URL
+    process.env.DATABASE_URL
 );
 
 
