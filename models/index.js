@@ -5,11 +5,17 @@
 // Récupérer le paquet de sequelize dans npm
 const {DataTypes, Sequelize} = require('sequelize');
 
-// const dotenv = require('dotenv');
+// Dans le cas où je suis en local uniquement
+if(!process.env.NODE_ENV) 
+{
 
-// // Ca va envoyer dans la variable process.env, tous les paramètres
-// // dans le fichier .env
-// dotenv.config();
+    const dotenv = require('dotenv');
+
+    // Ca va envoyer dans la variable process.env, tous les paramètres
+    // dans le fichier .env
+    dotenv.config();
+}
+
 
 // Créer une instance de sequelize avec les paramètres de la BDD
 const sequelize = new Sequelize(
